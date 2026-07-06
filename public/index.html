@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知墨教育 - 让学习更美好</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Noto Sans SC', sans-serif; }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(30px, -30px) rotate(10deg); }
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .card-hover:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .card-hover:hover .icon-wrapper {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .math-gradient { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+    .english-gradient { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+    .chinese-gradient { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+    .science-gradient { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-blur {
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .stat-number {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .wave-divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave-divider svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 80px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- 导航栏 -->
+  <nav class="nav-blur fixed w-full z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">知</div>
+        <span class="text-xl font-bold text-gray-800">知墨教育</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="text-gray-600 hover:text-indigo-600 transition font-medium">首页</a>
+        <a href="#courses" class="text-gray-600 hover:text-indigo-600 transition font-medium">课程</a>
+        <a href="#about" class="text-gray-600 hover:text-indigo-600 transition font-medium">关于我们</a>
+        <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition font-medium">联系我们</a>
+      </div>
+      <button class="btn-primary text-white px-6 py-2.5 rounded-full font-medium text-sm">免费咨询</button>
+    </div>
+  </nav>
+
+  <!-- 主视觉区域 -->
+  <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20 relative">
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <div class="inline-block px-4 py-1.5 bg-white/20 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
+        ✨ 专注K12在线教育 · 让每个孩子闪闪发光
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+        知墨教育
+      </h1>
+      <p class="text-xl md:text-2xl font-light mb-4 opacity-90">
+        用知识点亮未来，以墨香浸润成长
+      </p>
+      <p class="text-base md:text-lg font-light mb-12 opacity-75 max-w-2xl mx-auto">
+        覆盖数学、英语、语文、科学四大核心学科，名师在线授课，AI智能辅导，为孩子量身定制学习方案
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#courses" class="bg-white text-indigo-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+          探索课程 →
+        </a>
+        <a href="#about" class="border-2 border-white/50 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white/10 transition-all">
+          了解更多
+        </a>
+      </div>
+
+      <!-- 数据统计 -->
+      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <div class="text-4xl font-black">5000+</div>
+          <div class="text-sm opacity-75 mt-1">在读学员</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black">200+</div>
+          <div class="text-sm opacity-75 mt-1">精品课程</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black">98%</div>
+          <div class="text-sm opacity-75 mt-1">家长好评</div>
+        </div>
+        <div>
+          <div class="text-4xl font-black">50+</div>
+          <div class="text-sm opacity-75 mt-1">名师团队</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" fill="#f9fafb">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 课程模块 -->
+  <section id="courses" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-600 rounded-full text-sm font-medium mb-4">
+          核心课程
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">四大精品学科</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">系统化课程体系，覆盖K12全学段，助力孩子全面发展</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- 数学 -->
+        <div class="fade-in card-hover bg-white rounded-3xl p-8 shadow-lg cursor-pointer">
+          <div class="icon-wrapper math-gradient text-white">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">数学</h3>
+          <p class="text-gray-500 mb-6 leading-relaxed">从基础运算到高等数学，培养逻辑思维与问题解决能力，让数学变得有趣易懂。</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">思维训练</span>
+            <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">奥数竞赛</span>
+            <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">趣味数学</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-pink-500 font-medium hover:text-pink-600 transition">
+            了解详情
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- 英语 -->
+        <div class="fade-in card-hover bg-white rounded-3xl p-8 shadow-lg cursor-pointer">
+          <div class="icon-wrapper english-gradient text-white">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">英语</h3>
+          <p class="text-gray-500 mb-6 leading-relaxed">沉浸式英语教学，外教一对一口语练习，从启蒙到高级，全面提升英语能力。</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">口语训练</span>
+            <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">阅读写作</span>
+            <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">考级备考</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-blue-500 font-medium hover:text-blue-600 transition">
+            了解详情
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- 语文 -->
+        <div class="fade-in card-hover bg-white rounded-3xl p-8 shadow-lg cursor-pointer">
+          <div class="icon-wrapper chinese-gradient text-white">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">语文</h3>
+          <p class="text-gray-500 mb-6 leading-relaxed">国学经典与现代文学并重，提升阅读理解与写作表达能力，传承中华文化精髓。</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-medium">阅读写作</span>
+            <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-medium">古诗词</span>
+            <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-medium">国学经典</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-green-500 font-medium hover:text-green-600 transition">
+            了解详情
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- 科学 -->
+        <div class="fade-in card-hover bg-white rounded-3xl p-8 shadow-lg cursor-pointer">
+          <div class="icon-wrapper science-gradient text-white">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">科学</h3>
+          <p class="text-gray-500 mb-6 leading-relaxed">物理化学生物全覆盖，实验探究与理论结合，激发科学兴趣，培养探索精神。</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 bg-yellow-50 text-yellow-600 rounded-full text-xs font-medium">实验探究</span>
+            <span class="px-3 py-1 bg-yellow-50 text-yellow-600 rounded-full text-xs font-medium">STEM</span>
+            <span class="px-3 py-1 bg-yellow-50 text-yellow-600 rounded-full text-xs font-medium">科学竞赛</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-yellow-500 font-medium hover:text-yellow-600 transition">
+            了解详情
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 为什么选择我们 -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-1.5 bg-purple-100 text-purple-600 rounded-full text-sm font-medium mb-4">
+          我们的优势
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">为什么选择知墨教育</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">专注教育品质，用心陪伴每一个孩子的成长之路</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="text-center p-8">
+          <div class="w-16 h-16 mx-auto mb-6 bg-indigo-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">名师团队</h3>
+          <p class="text-gray-500">985/211高校毕业，平均教龄8年以上，教学经验丰富，深谙教育之道。</p>
+        </div>
+        <div class="text-center p-8">
+          <div class="w-16 h-16 mx-auto mb-6 bg-purple-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">AI智能辅导</h3>
+          <p class="text-gray-500">智能诊断学习薄弱点，个性化推荐学习路径，让学习更高效更精准。</p>
+        </div>
+        <div class="text-center p-8">
+          <div class="w-16 h-16 mx-auto mb-6 bg-pink-100 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">贴心服务</h3>
+          <p class="text-gray-500">班主任全程跟踪，定期反馈学习进度，家校联动共同助力孩子成长。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section id="contact" class="py-24 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-black mb-6">开启孩子的学习之旅</h2>
+      <p class="text-xl opacity-90 mb-10">立即预约免费试听课，让孩子体验不一样的在线教育</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="bg-white text-indigo-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+          免费预约试听
+        </button>
+        <button class="border-2 border-white/50 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white/10 transition-all">
+          电话咨询：400-XXX-XXXX
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+        <div>
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">知</div>
+            <span class="text-xl font-bold text-white">知墨教育</span>
+          </div>
+          <p class="text-sm leading-relaxed">专注K12在线教育，用科技赋能教育，让每个孩子都能享受优质教育资源。</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">课程体系</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">数学课程</a></li>
+            <li><a href="#" class="hover:text-white transition">英语课程</a></li>
+            <li><a href="#" class="hover:text-white transition">语文课程</a></li>
+            <li><a href="#" class="hover:text-white transition">科学课程</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">关于我们</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">公司介绍</a></li>
+            <li><a href="#" class="hover:text-white transition">师资力量</a></li>
+            <li><a href="#" class="hover:text-white transition">家长评价</a></li>
+            <li><a href="#" class="hover:text-white transition">加入我们</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">联系方式</h4>
+          <ul class="space-y-2 text-sm">
+            <li>电话：400-XXX-XXXX</li>
+            <li>邮箱：contact@zhimuedu.com</li>
+            <li>地址：中国 · 线上教育平台</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm">
+        <p>&copy; 2025 知墨教育 All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
