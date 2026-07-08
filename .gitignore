@@ -4,6 +4,8 @@ node_modules/
 .DS_Store
 *.docx
 *.xlsx
+*.doc
+*.pdf
 public/textbooks/
 npm-debug.log*
 yarn-debug.log*
