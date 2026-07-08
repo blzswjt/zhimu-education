@@ -295,8 +295,8 @@
             <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-medium">古诗词</span>
             <span class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-medium">国学经典</span>
           </div>
-          <a href="#" class="inline-flex items-center text-green-500 font-medium hover:text-green-600 transition">
-            了解详情
+          <a href="#chinese-schedule" class="inline-flex items-center text-green-500 font-medium hover:text-green-600 transition">
+            查看课表
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -832,6 +832,155 @@
               <thead><tr><th class="w-20 text-center">课次</th><th class="w-48">主题</th><th>上课内容</th></tr></thead>
               <tbody>
                 <tr><td class="text-center font-mono text-amber-500">32</td><td class="font-medium">总复习 + 模拟冲刺</td><td class="text-gray-500 text-xs">高频考点串讲；限时模拟训练 + 错题分析</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 语文课程表 -->
+  <section id="chinese-schedule" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="inline-block px-4 py-1.5 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-4">
+          语文课程体系
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">语文中考冲刺课程表</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">23节系统化课程，覆盖现代文、文言文、古诗、作文全模块</p>
+      </div>
+
+      <div class="space-y-4">
+
+        <!-- 基础知识运用 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-green-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-green-100 text-green-700">基础知识运用</span>
+              <span class="font-bold text-gray-800">2讲 · 语法综合训练</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">节次</th><th>主题</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-green-500">1</td><td>语法综合（一）</td></tr>
+                <tr><td class="text-center font-mono text-green-500">1</td><td>语法综合（二）</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 现代文阅读 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-teal-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-teal-100 text-teal-700">现代文阅读</span>
+              <span class="font-bold text-gray-800">8讲 · 攻克现代文阅读难题</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">节次</th><th>主题</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-teal-500">2</td><td>文章概括与结构梳理</td></tr>
+                <tr><td class="text-center font-mono text-teal-500">3</td><td>人物形象、情感、心理</td></tr>
+                <tr><td class="text-center font-mono text-teal-500">4</td><td>标点符号与环境描写</td></tr>
+                <tr><td class="text-center font-mono text-teal-500">5</td><td>情节作用与细节描写</td></tr>
+                <tr><td class="text-center font-mono text-teal-500">6</td><td>结构作用与记叙顺序</td></tr>
+                <tr><td class="text-center font-mono text-teal-500">7</td><td>词句段赏析</td></tr>
+                <tr><td class="text-center font-mono text-teal-500">8</td><td>标题人称作用</td></tr>
+                <tr><td class="text-center font-mono text-teal-500">9</td><td>语言风格与主旨把握、开放题型</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 文言文 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-amber-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-amber-100 text-amber-700">文言文</span>
+              <span class="font-bold text-gray-800">3讲 · 文言文阅读与翻译</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">节次</th><th>主题</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-amber-500">10</td><td>人物传记类文言文 + 实词翻译</td></tr>
+                <tr><td class="text-center font-mono text-amber-500">11</td><td>游记类文言文分析 + 句子翻译</td></tr>
+                <tr><td class="text-center font-mono text-amber-500">12</td><td>说理类文言文 + 开放题</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 古诗鉴赏 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-purple-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-purple-100 text-purple-700">古诗鉴赏</span>
+              <span class="font-bold text-gray-800">2讲 · 古诗词赏析</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">节次</th><th>主题</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-purple-500">13</td><td>古诗鉴赏（一）</td></tr>
+                <tr><td class="text-center font-mono text-purple-500">14</td><td>古诗鉴赏（二）</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 非连续性文本 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-cyan-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-cyan-100 text-cyan-700">非连续性文本</span>
+              <span class="font-bold text-gray-800">2讲 · 信息类文本阅读</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">节次</th><th>主题</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-cyan-500">15</td><td>非连续性文本阅读（一）</td></tr>
+                <tr><td class="text-center font-mono text-cyan-500">16</td><td>非连续性文本阅读（二）</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 作文 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-rose-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-rose-100 text-rose-700">作文</span>
+              <span class="font-bold text-gray-800">7讲 · 七大主题作文突破</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">节次</th><th>主题</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-rose-500">17</td><td>作文一：成长哲思</td></tr>
+                <tr><td class="text-center font-mono text-rose-500">18</td><td>作文二：校园生活</td></tr>
+                <tr><td class="text-center font-mono text-rose-500">19</td><td>作文三：师长亲友</td></tr>
+                <tr><td class="text-center font-mono text-rose-500">20</td><td>作文四：文化传承</td></tr>
+                <tr><td class="text-center font-mono text-rose-500">21</td><td>作文五：家国情怀</td></tr>
+                <tr><td class="text-center font-mono text-rose-500">22</td><td>作文六：青春梦想</td></tr>
+                <tr><td class="text-center font-mono text-rose-500">23</td><td>作文七：榜样人物</td></tr>
               </tbody>
             </table>
           </div>
