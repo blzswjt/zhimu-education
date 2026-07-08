@@ -1,9 +1,9 @@
 {
   "build": {
-    "command": "npm install",
+    "command": "pip install -r requirements.txt && python knowledge_base.py",
     "output": "."
   },
   "run": {
-    "command": "npm start"
+    "command": "uvicorn app:app --host 0.0.0.0 --port ${PORT:-3000}"
   }
 }
