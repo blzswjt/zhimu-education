@@ -73,6 +73,38 @@ app.mount("/static", StaticFiles(directory=str(PUBLIC_DIR)), name="static")
 async def health():
     return {"status": "ok", "service": "zhimu-education"}
 
+@app.get("/api/debug")
+async def debug():
+    """诊断接口：检查环境变量和 LLM 连通性"""
+    from openai import AsyncOpenAI
+    api_key = os.getenv('LLM_API_KEY', '')
+    base_url = os.getenv('LLM_BASE_URL', '')
+    model = os.getenv('LLM_MODEL', '')
+    
+    result = {
+        'api_key_set': bool(api_key),
+        'api_key_prefix': api_key[:8] + '...' if api_key else 'EMPTY',
+        'base_url': base_url,
+        'model': model,
+    }
+    
+    if not api_key:
+        result['llm_test'] = 'SKIPPED - API Key 未设置，请在 Zeabur 环境变量中添加 LLM_API_KEY'
+        return result
+    
+    try:
+        client = AsyncOpenAI(api_key=api_key, base_url=base_url or None)
+        resp = await client.chat.completions.create(
+            model=model or 'qwen-plus-latest',
+            messages=[{'role': 'user', 'content': '你好'}],
+            max_tokens=20,
+        )
+        result['llm_test'] = 'OK: ' + resp.choices[0].message.content
+    except Exception as e:
+        result['llm_test'] = f'ERROR: {type(e).__name__}: {str(e)[:200]}'
+    
+    return result
+
 # 所有未匹配的路由返回 index.html（SPA fallback）
 @app.get("/{path:path}")
 async def fallback(path: str):
