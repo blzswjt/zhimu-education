@@ -1,9 +1,5 @@
 {
-  "build": {
-    "command": "pip install -r requirements.txt && python knowledge_base.py",
-    "output": "."
-  },
   "run": {
-    "command": "uvicorn app:app --host 0.0.0.0 --port ${PORT:-3000}"
+    "command": "uvicorn app:app --host 0.0.0.0 --port $PORT"
   }
 }

@@ -9,6 +9,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
 
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, StreamingResponse
@@ -63,6 +67,10 @@ async def index():
     return FileResponse(PUBLIC_DIR / "index.html")
 
 app.mount("/static", StaticFiles(directory=str(PUBLIC_DIR)), name="static")
+
+@app.get("/api/health")
+async def health():
+    return {"status": "ok", "service": "zhimu-education"}
 
 # 所有未匹配的路由返回 index.html（SPA fallback）
 @app.get("/{path:path}")
