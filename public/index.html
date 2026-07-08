@@ -107,6 +107,53 @@
       width: calc(100% + 1.3px);
       height: 80px;
     }
+
+    /* 课表Tab切换 */
+    .tab-btn { transition: all 0.3s ease; }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeInUp 0.5s forwards; }
+
+    /* 折叠面板 */
+    .accordion-header {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .accordion-header:hover { background: #fdf2f8; }
+    .accordion-header .arrow { transition: transform 0.3s ease; }
+    .accordion-header.open .arrow { transform: rotate(180deg); }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-body.open { max-height: 2000px; }
+
+    /* 课表表格 */
+    .schedule-table th {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-weight: 600;
+    }
+    .schedule-table tr:nth-child(even) { background: #f8fafc; }
+    .schedule-table tr:hover { background: #eef2ff; }
+    .schedule-table td, .schedule-table th {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.875rem;
+    }
+
+    .module-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -209,13 +256,11 @@
             <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">奥数竞赛</span>
             <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">趣味数学</span>
           </div>
-          <a href="#" class="inline-flex items-center text-pink-500 font-medium hover:text-pink-600 transition">
-            了解详情
+          <a href="#math-schedule" class="inline-flex items-center text-pink-500 font-medium hover:text-pink-600 transition">
+            查看课表
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </a>
         </div>
-
-        <!-- 英语 -->
         <div class="fade-in card-hover bg-white rounded-3xl p-8 shadow-lg cursor-pointer">
           <div class="icon-wrapper english-gradient text-white">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -279,6 +324,222 @@
     </div>
   </section>
 
+  <!-- 数学联赛课程表 -->
+  <section id="math-schedule" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="inline-block px-4 py-1.5 bg-pink-100 text-pink-600 rounded-full text-sm font-medium mb-4">
+          数学竞赛集训
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">数学联赛课程表</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">系统化竞赛培训体系，从初中联赛到高中联赛，阶梯式能力提升</p>
+      </div>
+
+      <!-- Tab 切换 -->
+      <div class="flex justify-center gap-4 mb-10">
+        <button class="tab-btn active px-8 py-3 rounded-full font-bold text-sm border-2 border-pink-200" onclick="switchTab('junior')">初中数学联赛（82讲）</button>
+        <button class="tab-btn px-8 py-3 rounded-full font-bold text-sm border-2 border-pink-200 text-gray-500" onclick="switchTab('senior')">高中数学联赛（35节）</button>
+      </div>
+
+      <!-- 初中数学联赛 -->
+      <div id="tab-junior" class="tab-content active">
+        <div class="space-y-4">
+
+          <!-- 代数板块 -->
+          <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+            <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-pink-50 to-white" onclick="toggleAccordion(this)">
+              <div class="flex items-center gap-3">
+                <span class="module-badge bg-pink-100 text-pink-700">代数板块</span>
+                <span class="font-bold text-gray-800">30讲 · 夯实代数根基</span>
+              </div>
+              <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table class="schedule-table w-full">
+                <thead><tr><th class="w-20 text-center">讲次</th><th>内容</th><th class="w-32">所属篇章</th></tr></thead>
+                <tbody>
+                  <tr><td class="text-center font-mono text-pink-500">1</td><td>有理数与数轴</td><td><span class="module-badge bg-purple-50 text-purple-600">实数</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">2</td><td>实数</td><td><span class="module-badge bg-purple-50 text-purple-600">实数</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">3</td><td>绝对值的化简</td><td><span class="module-badge bg-purple-50 text-purple-600">实数</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">4</td><td>绝对值的几何意义</td><td><span class="module-badge bg-purple-50 text-purple-600">实数</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">5</td><td>整式的运算</td><td><span class="module-badge bg-indigo-50 text-indigo-600">代数式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">6</td><td>整式化简求值</td><td><span class="module-badge bg-indigo-50 text-indigo-600">代数式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">7</td><td>乘法公式初步</td><td><span class="module-badge bg-indigo-50 text-indigo-600">代数式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">8</td><td>乘法公式深入探索</td><td><span class="module-badge bg-indigo-50 text-indigo-600">代数式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">9</td><td>乘法公式综合应用</td><td><span class="module-badge bg-indigo-50 text-indigo-600">代数式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">10</td><td>因式分解初步</td><td><span class="module-badge bg-indigo-50 text-indigo-600">代数式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">11</td><td>一次方程和方程组的解法</td><td><span class="module-badge bg-blue-50 text-blue-600">方程和不等式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">12</td><td>不等式和不等式组的解法</td><td><span class="module-badge bg-blue-50 text-blue-600">方程和不等式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">13</td><td>含参及绝对值的方程（组）</td><td><span class="module-badge bg-blue-50 text-blue-600">方程和不等式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">14</td><td>含参及绝对值的不等式（组）</td><td><span class="module-badge bg-blue-50 text-blue-600">方程和不等式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">15</td><td>方程与不等式综合</td><td><span class="module-badge bg-blue-50 text-blue-600">方程和不等式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">16</td><td>因式分解的基本方法</td><td><span class="module-badge bg-green-50 text-green-600">整式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">17</td><td>巧妙选"元"</td><td><span class="module-badge bg-green-50 text-green-600">整式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">18</td><td>高次多项式的分解</td><td><span class="module-badge bg-green-50 text-green-600">整式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">19</td><td>整式恒等变形</td><td><span class="module-badge bg-green-50 text-green-600">整式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">20</td><td>分式运算技巧</td><td><span class="module-badge bg-yellow-50 text-yellow-700">分式与根式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">21</td><td>分式恒等变形</td><td><span class="module-badge bg-yellow-50 text-yellow-700">分式与根式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">22</td><td>二次根式的运算</td><td><span class="module-badge bg-yellow-50 text-yellow-700">分式与根式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">23</td><td>根式恒等变形</td><td><span class="module-badge bg-yellow-50 text-yellow-700">分式与根式</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">24</td><td>特殊方程的解法</td><td><span class="module-badge bg-orange-50 text-orange-600">二次方程</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">25</td><td>判别式与韦达定理</td><td><span class="module-badge bg-orange-50 text-orange-600">二次方程</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">26</td><td>方程的根</td><td><span class="module-badge bg-orange-50 text-orange-600">二次方程</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">27</td><td>方程的构造</td><td><span class="module-badge bg-orange-50 text-orange-600">二次方程</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">28</td><td>整除与同余</td><td><span class="module-badge bg-red-50 text-red-600">数论</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">29</td><td>不定方程</td><td><span class="module-badge bg-red-50 text-red-600">数论</span></td></tr>
+                  <tr><td class="text-center font-mono text-pink-500">30</td><td>高斯符号</td><td><span class="module-badge bg-red-50 text-red-600">数论</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 几何板块 -->
+          <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+            <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-blue-50 to-white" onclick="toggleAccordion(this)">
+              <div class="flex items-center gap-3">
+                <span class="module-badge bg-blue-100 text-blue-700">几何板块</span>
+                <span class="font-bold text-gray-800">32讲 · 构建几何思维</span>
+              </div>
+              <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table class="schedule-table w-full">
+                <thead><tr><th class="w-20 text-center">讲次</th><th>内容</th><th class="w-32">所属篇章</th></tr></thead>
+                <tbody>
+                  <tr><td class="text-center font-mono text-blue-500">31</td><td>几何命题与推论证明</td><td><span class="module-badge bg-blue-50 text-blue-600">三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">32</td><td>三角形的性质</td><td><span class="module-badge bg-blue-50 text-blue-600">三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">33</td><td>全等三角形的性质与判定</td><td><span class="module-badge bg-blue-50 text-blue-600">三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">34</td><td>全等三角形辅助线初步</td><td><span class="module-badge bg-blue-50 text-blue-600">三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">35</td><td>与角平分线相关的全等模型</td><td><span class="module-badge bg-blue-50 text-blue-600">三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">36</td><td>全等三角形综合</td><td><span class="module-badge bg-blue-50 text-blue-600">三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">37</td><td>面积问题和面积方法</td><td><span class="module-badge bg-blue-50 text-blue-600">三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">38</td><td>等腰三角形</td><td><span class="module-badge bg-cyan-50 text-cyan-600">特殊三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">39</td><td>勾股定理</td><td><span class="module-badge bg-cyan-50 text-cyan-600">特殊三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">40</td><td>直角三角形</td><td><span class="module-badge bg-cyan-50 text-cyan-600">特殊三角形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">41</td><td>平行四边形</td><td><span class="module-badge bg-teal-50 text-teal-600">四边形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">42</td><td>矩形、菱形</td><td><span class="module-badge bg-teal-50 text-teal-600">四边形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">43</td><td>正方形</td><td><span class="module-badge bg-teal-50 text-teal-600">四边形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">44</td><td>中点的妙用</td><td><span class="module-badge bg-teal-50 text-teal-600">四边形</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">45</td><td>几何变换之轴对称（一）</td><td><span class="module-badge bg-violet-50 text-violet-600">几何变换</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">46</td><td>几何变换之轴对称（二）</td><td><span class="module-badge bg-violet-50 text-violet-600">几何变换</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">47</td><td>几何变换之旋转（一）</td><td><span class="module-badge bg-violet-50 text-violet-600">几何变换</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">48</td><td>几何变换之旋转（二）</td><td><span class="module-badge bg-violet-50 text-violet-600">几何变换</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">49</td><td>几何变换之平移</td><td><span class="module-badge bg-violet-50 text-violet-600">几何变换</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">50</td><td>组合计数与组合最值</td><td><span class="module-badge bg-rose-50 text-rose-600">组合</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">51</td><td>抽屉原理与染色问题</td><td><span class="module-badge bg-rose-50 text-rose-600">组合</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">52</td><td>操作问题与最佳策略</td><td><span class="module-badge bg-rose-50 text-rose-600">组合</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">53</td><td>比例线段与相似三角形的判定</td><td><span class="module-badge bg-amber-50 text-amber-600">相似</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">54</td><td>相似模型（一）</td><td><span class="module-badge bg-amber-50 text-amber-600">相似</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">55</td><td>相似模型（二）</td><td><span class="module-badge bg-amber-50 text-amber-600">相似</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">56</td><td>相似三角形综合</td><td><span class="module-badge bg-amber-50 text-amber-600">相似</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">57</td><td>Menelaus定理与Ceva定理</td><td><span class="module-badge bg-amber-50 text-amber-600">相似</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">58</td><td>圆的基本性质</td><td><span class="module-badge bg-emerald-50 text-emerald-600">圆</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">59</td><td>直线与圆的位置关系</td><td><span class="module-badge bg-emerald-50 text-emerald-600">圆</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">60</td><td>圆幂定理</td><td><span class="module-badge bg-emerald-50 text-emerald-600">圆</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">61</td><td>圆与圆的位置关系</td><td><span class="module-badge bg-emerald-50 text-emerald-600">圆</span></td></tr>
+                  <tr><td class="text-center font-mono text-blue-500">62</td><td>圆中的全等与相似</td><td><span class="module-badge bg-emerald-50 text-emerald-600">圆</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 函数板块 -->
+          <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+            <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-green-50 to-white" onclick="toggleAccordion(this)">
+              <div class="flex items-center gap-3">
+                <span class="module-badge bg-green-100 text-green-700">函数板块</span>
+                <span class="font-bold text-gray-800">20讲 · 函数综合提升</span>
+              </div>
+              <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+            <div class="accordion-body">
+              <table class="schedule-table w-full">
+                <thead><tr><th class="w-20 text-center">讲次</th><th>内容</th><th class="w-32">所属篇章</th></tr></thead>
+                <tbody>
+                  <tr><td class="text-center font-mono text-green-500">63</td><td>坐标系与函数初步</td><td><span class="module-badge bg-green-50 text-green-600">函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">64</td><td>一次函数的图象和性质</td><td><span class="module-badge bg-green-50 text-green-600">函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">65</td><td>一次函数与一次方程和不等式</td><td><span class="module-badge bg-green-50 text-green-600">函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">66</td><td>反比例函数</td><td><span class="module-badge bg-green-50 text-green-600">函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">67</td><td>一次函数与反比例函数综合</td><td><span class="module-badge bg-green-50 text-green-600">函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">68</td><td>二次函数的性质和图象变换</td><td><span class="module-badge bg-lime-50 text-lime-600">二次函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">69</td><td>二次函数的图象特征</td><td><span class="module-badge bg-lime-50 text-lime-600">二次函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">70</td><td>二次函数的最值</td><td><span class="module-badge bg-lime-50 text-lime-600">二次函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">71</td><td>用函数的观点看方程和不等式</td><td><span class="module-badge bg-lime-50 text-lime-600">二次函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">72</td><td>三角函数</td><td><span class="module-badge bg-sky-50 text-sky-600">三角函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">73</td><td>利用三角函数解几何题</td><td><span class="module-badge bg-sky-50 text-sky-600">三角函数</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">74</td><td>四点共圆的判定</td><td><span class="module-badge bg-fuchsia-50 text-fuchsia-600">圆综合</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">75</td><td>四点共圆的应用</td><td><span class="module-badge bg-fuchsia-50 text-fuchsia-600">圆综合</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">76</td><td>Ptolemy定理</td><td><span class="module-badge bg-fuchsia-50 text-fuchsia-600">圆综合</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">77</td><td>三角形的重心和垂心</td><td><span class="module-badge bg-fuchsia-50 text-fuchsia-600">圆综合</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">78</td><td>三角形的外心和内心</td><td><span class="module-badge bg-fuchsia-50 text-fuchsia-600">圆综合</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">79</td><td>四点共圆综合</td><td><span class="module-badge bg-fuchsia-50 text-fuchsia-600">圆综合</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">80</td><td>面积方法</td><td><span class="module-badge bg-gray-100 text-gray-600">解题策略</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">81</td><td>数形结合思想</td><td><span class="module-badge bg-gray-100 text-gray-600">解题策略</span></td></tr>
+                  <tr><td class="text-center font-mono text-green-500">82</td><td>反证法与同一法</td><td><span class="module-badge bg-gray-100 text-gray-600">解题策略</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 高中数学联赛 -->
+      <div id="tab-senior" class="tab-content">
+        <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+          <table class="schedule-table w-full">
+            <thead>
+              <tr>
+                <th class="w-20 text-center">节次</th>
+                <th>课堂内容</th>
+                <th class="w-40">课后任务</th>
+                <th class="w-40">备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="text-center font-mono text-indigo-500">1</td><td>集合 + 常用逻辑用语 + 复数（新课）</td><td class="text-gray-400">无测试</td><td class="text-gray-500 text-xs">三章合并，快速过</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">2</td><td>不等式（上）</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">3</td><td>不等式（下）</td><td class="text-pink-500 text-xs font-medium">发不等式测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">4</td><td>讲评不等式测试卷 + 函数概念与性质（一）</td><td></td><td class="text-gray-500 text-xs">开启函数单元</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">5</td><td>函数概念与性质（二）</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">6</td><td>函数概念与性质（三）</td><td class="text-pink-500 text-xs font-medium">发函数性质测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">7</td><td>讲评函数性质测试卷 + 指数与对数函数（上）</td><td></td><td class="text-gray-500 text-xs">开启指对函数</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">8</td><td>指数与对数函数（下）</td><td class="text-pink-500 text-xs font-medium">发指对函数测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">9</td><td>讲评指对函数测试卷 + 三角函数（一）</td><td></td><td class="text-gray-500 text-xs">开启三角函数</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">10</td><td>三角函数（二）</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">11</td><td>三角函数（三）</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">12</td><td>三角函数（四）</td><td class="text-pink-500 text-xs font-medium">发三角函数测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">13</td><td>讲评三角函数测试卷 + 平面向量（上）</td><td></td><td class="text-gray-500 text-xs">开启平面向量</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">14</td><td>平面向量（下）</td><td class="text-pink-500 text-xs font-medium">发平面向量测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">15</td><td>讲评平面向量测试卷 + 统计（新课）</td><td></td><td class="text-gray-500 text-xs">开启统计概率</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">16</td><td>概率 + 随机变量（上）</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">17</td><td>随机变量（下） + 成对数据分析</td><td class="text-pink-500 text-xs font-medium">发统计概率综合测试卷</td><td class="text-gray-500 text-xs">本模块新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">18</td><td>讲评统计概率测试卷 + 立体几何（一）</td><td></td><td class="text-gray-500 text-xs">开启立体几何</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">19</td><td>立体几何（二）</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">20</td><td>立体几何（三）</td><td class="text-pink-500 text-xs font-medium">发立体几何测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">21</td><td>讲评立体几何测试卷 + 空间向量与立体几何</td><td></td><td class="text-gray-500 text-xs">向量法与几何法衔接</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">22</td><td>直线与圆（上）</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">23</td><td>直线与圆（下）</td><td class="text-pink-500 text-xs font-medium">发直线与圆测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">24</td><td>讲评直线与圆测试卷 + 圆锥曲线（一）椭圆</td><td></td><td class="text-gray-500 text-xs">开启圆锥曲线</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">25</td><td>圆锥曲线（二）双曲线与抛物线</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">26</td><td>圆锥曲线（三）弦长与面积</td><td class="text-pink-500 text-xs font-medium">发圆锥曲线测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">27</td><td>讲评圆锥曲线测试卷 + 数列（上）</td><td></td><td class="text-gray-500 text-xs">开启数列</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">28</td><td>数列（下）</td><td class="text-pink-500 text-xs font-medium">发数列测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">29</td><td>讲评数列测试卷 + 导数（一）</td><td></td><td class="text-gray-500 text-xs">开启导数</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">30</td><td>导数（二）</td><td></td><td></td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">31</td><td>导数（三）</td><td class="text-pink-500 text-xs font-medium">发导数测试卷</td><td class="text-gray-500 text-xs">本单元新课结束</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">32</td><td>讲评导数测试卷 + 机动查漏补缺</td><td></td><td class="text-gray-500 text-xs">压轴章节讲评放慢</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">33</td><td>计数原理（排列组合与二项式定理）</td><td></td><td class="text-gray-500 text-xs">选修三内容</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">34</td><td>随机变量与分布列深化 + 讲评小测</td><td class="text-pink-500 text-xs font-medium">发计数概率综合小卷</td><td class="text-gray-500 text-xs">前面已涉及基础</td></tr>
+              <tr><td class="text-center font-mono text-indigo-500">35</td><td>期末综合串讲 / 高考题型点睛</td><td></td><td class="text-gray-500 text-xs">总复习收尾</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- 为什么选择我们 -->
   <section id="about" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
@@ -332,7 +593,7 @@
           免费预约试听
         </button>
         <button class="border-2 border-white/50 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white/10 transition-all">
-          电话咨询：400-XXX-XXXX
+          电话咨询：18668861895
         </button>
       </div>
     </div>
@@ -370,7 +631,7 @@
         <div>
           <h4 class="text-white font-bold mb-4">联系方式</h4>
           <ul class="space-y-2 text-sm">
-            <li>电话：400-XXX-XXXX</li>
+            <li>电话：18668861895</li>
             <li>邮箱：contact@zhimuedu.com</li>
             <li>地址：中国 · 线上教育平台</li>
           </ul>
@@ -383,4 +644,23 @@
   </footer>
 
 </body>
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    if (tab === 'junior') {
+      document.querySelectorAll('.tab-btn')[0].classList.add('active');
+      document.getElementById('tab-junior').classList.add('active');
+    } else {
+      document.querySelectorAll('.tab-btn')[1].classList.add('active');
+      document.getElementById('tab-senior').classList.add('active');
+    }
+  }
+  function toggleAccordion(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    header.classList.toggle('open', !isOpen);
+    body.classList.toggle('open', !isOpen);
+  }
+</script>
 </html>
