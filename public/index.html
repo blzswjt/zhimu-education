@@ -1520,6 +1520,10 @@ async function sendMessage() {
       body: JSON.stringify({ message: msg, history: chatHistory.slice(0, -1) }),
     });
 
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
     let fullText = '';
@@ -1530,12 +1534,14 @@ async function sendMessage() {
       if (done) break;
 
       buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split('\n');
+      // 同时处理 \n 和 \r\n
+      const lines = buffer.split(/\r?\n/);
       buffer = lines.pop() || '';
 
       for (const line of lines) {
-        if (line.startsWith('data: ')) {
-          const data = line.slice(6).trim();
+        const trimmed = line.trim();
+        if (trimmed.startsWith('data:')) {
+          const data = trimmed.slice(5).trim();
           if (data === '[DONE]') continue;
           try {
             const parsed = JSON.parse(data);
@@ -1549,12 +1555,17 @@ async function sendMessage() {
       }
     }
 
-    chatHistory.push({ role: 'assistant', content: fullText });
+    // 流结束后，如果 fullText 有内容就用它渲染，否则显示提示
+    if (fullText) {
+      botDiv.innerHTML = formatMsg(fullText);
+      chatHistory.push({ role: 'assistant', content: fullText });
+    } else {
+      botDiv.innerHTML = '抱歉，暂时无法回复，请稍后重试或拨打 <b>18668861895</b> 咨询。';
+    }
   } catch (err) {
     botDiv.innerHTML = '抱歉，网络出现问题，请稍后重试或拨打 <b>18668861895</b> 咨询。';
   }
 
-  botDiv.innerHTML = formatMsg(botDiv.textContent) || '回复为空';
   isStreaming = false;
   document.getElementById('chat-send').disabled = false;
   messagesEl.scrollTop = messagesEl.scrollHeight;
