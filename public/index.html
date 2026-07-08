@@ -274,8 +274,8 @@
             <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">阅读写作</span>
             <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">考级备考</span>
           </div>
-          <a href="#" class="inline-flex items-center text-blue-500 font-medium hover:text-blue-600 transition">
-            了解详情
+          <a href="#english-schedule" class="inline-flex items-center text-blue-500 font-medium hover:text-blue-600 transition">
+            查看课表
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -540,6 +540,306 @@
     </div>
   </section>
 
+  <!-- 课内一对一辅导 -->
+  <section id="math-tutoring" class="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-600 rounded-full text-sm font-medium mb-4">
+          课内一对一辅导
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">同步课内教材精讲课</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">紧跟浙教版教材进度，一对一精准辅导，查漏补缺，夯实课内基础</p>
+      </div>
+
+      <!-- 教材封面轮播 -->
+      <div class="relative max-w-4xl mx-auto">
+        <div class="overflow-hidden rounded-3xl shadow-2xl bg-white" id="carousel-wrapper">
+          <div class="flex transition-transform duration-500 ease-in-out" id="carousel-track">
+
+            <div class="min-w-full flex flex-col md:flex-row items-center p-8 gap-8">
+              <div class="flex-1 flex justify-center">
+                <img src="/images/covers/7s.png" alt="七年级上册" class="max-h-80 rounded-xl shadow-lg object-contain">
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <span class="module-badge bg-pink-100 text-pink-700 mb-3 inline-block">七年级</span>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">七年级上册</h3>
+                <p class="text-gray-500 mb-4">浙教版 · 2024秋版</p>
+                <p class="text-gray-400 text-sm mb-6">有理数、有理数的运算、实数、代数式、一元一次方程、几何图形初步等核心内容</p>
+                <a href="/textbooks/【浙教版】七年级上册(2024秋版)数学电子课本.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium text-sm hover:shadow-lg transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  下载电子课本
+                </a>
+              </div>
+            </div>
+
+            <div class="min-w-full flex flex-col md:flex-row items-center p-8 gap-8">
+              <div class="flex-1 flex justify-center">
+                <img src="/images/covers/7x.png" alt="七年级下册" class="max-h-80 rounded-xl shadow-lg object-contain">
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <span class="module-badge bg-pink-100 text-pink-700 mb-3 inline-block">七年级</span>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">七年级下册</h3>
+                <p class="text-gray-500 mb-4">浙教版 · 2025春版</p>
+                <p class="text-gray-400 text-sm mb-6">平行线、三元一次方程组、整式的乘除、因式分解、分式、数据与统计等核心内容</p>
+                <a href="/textbooks/【浙教版】七年级下册(2025春版)数学电子课本.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium text-sm hover:shadow-lg transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  下载电子课本
+                </a>
+              </div>
+            </div>
+
+            <div class="min-w-full flex flex-col md:flex-row items-center p-8 gap-8">
+              <div class="flex-1 flex justify-center">
+                <img src="/images/covers/8s.png" alt="八年级上册" class="max-h-80 rounded-xl shadow-lg object-contain">
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <span class="module-badge bg-blue-100 text-blue-700 mb-3 inline-block">八年级</span>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">八年级上册</h3>
+                <p class="text-gray-500 mb-4">浙教版</p>
+                <p class="text-gray-400 text-sm mb-6">三角形、全等三角形、轴对称、一次函数、整式的乘除与因式分解等核心内容</p>
+                <a href="/textbooks/【浙教版】八年级上册数学电子课本.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium text-sm hover:shadow-lg transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  下载电子课本
+                </a>
+              </div>
+            </div>
+
+            <div class="min-w-full flex flex-col md:flex-row items-center p-8 gap-8">
+              <div class="flex-1 flex justify-center">
+                <img src="/images/covers/8x.png" alt="八年级下册" class="max-h-80 rounded-xl shadow-lg object-contain">
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <span class="module-badge bg-blue-100 text-blue-700 mb-3 inline-block">八年级</span>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">八年级下册</h3>
+                <p class="text-gray-500 mb-4">浙教版</p>
+                <p class="text-gray-400 text-sm mb-6">二次根式、勾股定理、平行四边形、一次函数、数据的分析等核心内容</p>
+                <a href="/textbooks/【浙教版】八年级下册数学电子课本.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium text-sm hover:shadow-lg transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  下载电子课本
+                </a>
+              </div>
+            </div>
+
+            <div class="min-w-full flex flex-col md:flex-row items-center p-8 gap-8">
+              <div class="flex-1 flex justify-center">
+                <img src="/images/covers/9s.png" alt="九年级上册" class="max-h-80 rounded-xl shadow-lg object-contain">
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <span class="module-badge bg-green-100 text-green-700 mb-3 inline-block">九年级</span>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">九年级上册</h3>
+                <p class="text-gray-500 mb-4">浙教版</p>
+                <p class="text-gray-400 text-sm mb-6">一元二次方程、二次函数、旋转、圆、概率初步等核心内容</p>
+                <a href="/textbooks/【浙教版】九年级上册数学电子课本.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium text-sm hover:shadow-lg transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  下载电子课本
+                </a>
+              </div>
+            </div>
+
+            <div class="min-w-full flex flex-col md:flex-row items-center p-8 gap-8">
+              <div class="flex-1 flex justify-center">
+                <img src="/images/covers/9x.png" alt="九年级下册" class="max-h-80 rounded-xl shadow-lg object-contain">
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <span class="module-badge bg-green-100 text-green-700 mb-3 inline-block">九年级</span>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">九年级下册</h3>
+                <p class="text-gray-500 mb-4">浙教版</p>
+                <p class="text-gray-400 text-sm mb-6">反比例函数、相似、锐角三角函数、投影与视图等核心内容</p>
+                <a href="/textbooks/【浙教版】九年级下册数学电子课本.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium text-sm hover:shadow-lg transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  下载电子课本
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 左右箭头 -->
+        <button onclick="carouselPrev()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition z-10">
+          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button onclick="carouselNext()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition z-10">
+          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- 圆点指示器 -->
+        <div class="flex justify-center gap-2 mt-8" id="carousel-dots">
+          <button onclick="carouselGo(0)" class="carousel-dot w-3 h-3 rounded-full bg-pink-500 transition-all"></button>
+          <button onclick="carouselGo(1)" class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+          <button onclick="carouselGo(2)" class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+          <button onclick="carouselGo(3)" class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+          <button onclick="carouselGo(4)" class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+          <button onclick="carouselGo(5)" class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+        </div>
+      </div>
+
+      <!-- 辅导特色说明 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
+        <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-4 bg-pink-100 rounded-xl flex items-center justify-center">
+            <svg class="w-7 h-7 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">一对一专属教学</h4>
+          <p class="text-gray-500 text-sm">根据学生实际情况定制教学方案，精准定位薄弱环节</p>
+        </div>
+        <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-4 bg-indigo-100 rounded-xl flex items-center justify-center">
+            <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">同步课内进度</h4>
+          <p class="text-gray-500 text-sm">紧扣浙教版教材，与学校课程同步，巩固课内知识</p>
+        </div>
+        <div class="text-center p-6 bg-white rounded-2xl shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-4 bg-purple-100 rounded-xl flex items-center justify-center">
+            <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">成绩稳步提升</h4>
+          <p class="text-gray-500 text-sm">系统梳理知识体系，帮助学生建立完整知识框架</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 英语课程表 -->
+  <section id="english-schedule" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="inline-block px-4 py-1.5 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-4">
+          英语课程体系
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">英语中考冲刺课程表</h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">32节系统化课程，覆盖语法、阅读、写作全模块，助力中考英语高分</p>
+      </div>
+
+      <div class="space-y-4">
+
+        <!-- 语法基础模块 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-blue-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-blue-100 text-blue-700">语法基础</span>
+              <span class="font-bold text-gray-800">16节 · 打通英语语法脉络</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">课次</th><th class="w-48">主题</th><th>上课内容</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-blue-500">1</td><td class="font-medium">词汇核心与词形转换</td><td class="text-gray-500 text-xs">中考热点词汇（环境、教育、科技等）；2022版课标新增词汇速记；高频词形转换</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">2</td><td class="font-medium">名词与代词</td><td class="text-gray-500 text-xs">可数/不可数名词、名词所有格；人称、物主、反身、不定代词</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">3</td><td class="font-medium">动词与动词短语</td><td class="text-gray-500 text-xs">动词分类（及物/不及物）；常考动词短语（look, take, get, turn等）</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">4</td><td class="font-medium">情态动词与时态（一）</td><td class="text-gray-500 text-xs">情态动词can, may, must, need等用法辨析；一般现在/过去/将来时</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">5</td><td class="font-medium">谓语动词时态（二）</td><td class="text-gray-500 text-xs">现在/过去进行时；现在/过去完成时</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">6</td><td class="font-medium">被动语态与动词不定式</td><td class="text-gray-500 text-xs">各种时态的被动语态；不定式作主语、宾语、宾补</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">7</td><td class="font-medium">非谓语动词</td><td class="text-gray-500 text-xs">动名词固定搭配（enjoy doing等）；分词作定语、状语；have sth done结构</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">8</td><td class="font-medium">形容词与副词</td><td class="text-gray-500 text-xs">比较级句型（as…as, the more…the more）；形容词顺序、副词位置</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">9</td><td class="font-medium">介词与连词</td><td class="text-gray-500 text-xs">时间/地点/方式介词；并列连词and, but, or, so等用法</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">10</td><td class="font-medium">数词与冠词</td><td class="text-gray-500 text-xs">基数词、序数词；时间、日期、编号表达；a/an/the的用法辨析</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">11</td><td class="font-medium">句子成分与基本句型</td><td class="text-gray-500 text-xs">句子成分划分（主谓宾、主系表）；五种基本句型；There be句型</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">12</td><td class="font-medium">宾语从句</td><td class="text-gray-500 text-xs">that/if/whether引导的宾语从句；语序、时态呼应、连接词选择</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">13</td><td class="font-medium">定语从句</td><td class="text-gray-500 text-xs">关系代词that, which, who, whom, whose；关系副词；限制性 vs 非限制性</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">14</td><td class="font-medium">状语从句</td><td class="text-gray-500 text-xs">时间、条件、原因、让步状语从句；when, if, because, although等引导词</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">15</td><td class="font-medium">主谓一致与特殊句式</td><td class="text-gray-500 text-xs">主谓一致原则（就近/就远原则）；祈使句、感叹句、倒装句</td></tr>
+                <tr><td class="text-center font-mono text-blue-500">16</td><td class="font-medium">构词法与句子种类综合</td><td class="text-gray-500 text-xs">常见前缀/后缀（派生、合成、转化）；陈述句、疑问句、祈使句、感叹句复习</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 阅读专项模块 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-cyan-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-cyan-100 text-cyan-700">阅读专项</span>
+              <span class="font-bold text-gray-800">6节 · 攻克阅读难题</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">课次</th><th class="w-48">主题</th><th>上课内容</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-cyan-500">17</td><td class="font-medium">完形填空（记叙文 + 夹叙夹议）</td><td class="text-gray-500 text-xs">记叙文逻辑推理；夹叙夹议类文章的结构与情感线索；解题技巧</td></tr>
+                <tr><td class="text-center font-mono text-cyan-500">18</td><td class="font-medium">完形填空（说明文）</td><td class="text-gray-500 text-xs">说明文的段落结构；逻辑词、代词指代、上下文呼应</td></tr>
+                <tr><td class="text-center font-mono text-cyan-500">19</td><td class="font-medium">阅读理解（应用文 + 记叙文）</td><td class="text-gray-500 text-xs">广告、通知、邮件等应用文；记叙文主旨、细节、人物情感</td></tr>
+                <tr><td class="text-center font-mono text-cyan-500">20</td><td class="font-medium">阅读理解（说明文 + 议论文）</td><td class="text-gray-500 text-xs">说明文事实细节；议论文观点态度；主旨题、推断题技巧</td></tr>
+                <tr><td class="text-center font-mono text-cyan-500">21</td><td class="font-medium">阅读理解（判断正误 + 阅读还原）</td><td class="text-gray-500 text-xs">判断正误题型的陷阱识别；句子还原题的逻辑衔接</td></tr>
+                <tr><td class="text-center font-mono text-cyan-500">22</td><td class="font-medium">任务型阅读（填表 + 信息摘要）</td><td class="text-gray-500 text-xs">图表填空、信息提取与归纳；多任务型阅读技巧</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 语言运用模块 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-violet-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-violet-100 text-violet-700">语言运用</span>
+              <span class="font-bold text-gray-800">4节 · 提升综合语言能力</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">课次</th><th class="w-48">主题</th><th>上课内容</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-violet-500">23</td><td class="font-medium">语法选择 + 语法填空</td><td class="text-gray-500 text-xs">语法选择题的考点分布；语法填空的词形变化与上下文逻辑</td></tr>
+                <tr><td class="text-center font-mono text-violet-500">24</td><td class="font-medium">短文改错 + 选词填空</td><td class="text-gray-500 text-xs">常见错误类型（时态、冠词、名词单复数）；选词填空的词义辨析与语法匹配</td></tr>
+                <tr><td class="text-center font-mono text-violet-500">25</td><td class="font-medium">补全对话 + 情景写句</td><td class="text-gray-500 text-xs">日常交际用语；根据情景写句子（建议、邀请、道歉等）</td></tr>
+                <tr><td class="text-center font-mono text-violet-500">26</td><td class="font-medium">看图写话 + 完成句子</td><td class="text-gray-500 text-xs">图片描述技巧；句型转换、连词成句</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 写作专项模块 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-emerald-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-emerald-100 text-emerald-700">写作专项</span>
+              <span class="font-bold text-gray-800">5节 · 拿高分作文</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">课次</th><th class="w-48">主题</th><th>上课内容</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-emerald-500">27</td><td class="font-medium">书面表达基础 + 邀请信/感谢信</td><td class="text-gray-500 text-xs">书信格式、常用句型；邀请信与感谢信的模板与写作</td></tr>
+                <tr><td class="text-center font-mono text-emerald-500">28</td><td class="font-medium">书面表达（建议信 + 申请信）</td><td class="text-gray-500 text-xs">建议信的礼貌表达；申请信的自我介绍与动机</td></tr>
+                <tr><td class="text-center font-mono text-emerald-500">29</td><td class="font-medium">书面表达（通知 + 发言稿）</td><td class="text-gray-500 text-xs">通知的格式与语言特点；发言稿的开头与结尾技巧</td></tr>
+                <tr><td class="text-center font-mono text-emerald-500">30</td><td class="font-medium">读写综合训练（一）</td><td class="text-gray-500 text-xs">阅读+写作结合题型；信息提取与转述训练</td></tr>
+                <tr><td class="text-center font-mono text-emerald-500">31</td><td class="font-medium">读写综合训练（二）</td><td class="text-gray-500 text-xs">图表类读写综合题；观点表达与结构组织</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 总复习 -->
+        <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="accordion-header flex items-center justify-between p-5 bg-gradient-to-r from-amber-50 to-white" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <span class="module-badge bg-amber-100 text-amber-700">总复习</span>
+              <span class="font-bold text-gray-800">1节 · 冲刺模拟</span>
+            </div>
+            <svg class="arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="accordion-body">
+            <table class="schedule-table w-full">
+              <thead><tr><th class="w-20 text-center">课次</th><th class="w-48">主题</th><th>上课内容</th></tr></thead>
+              <tbody>
+                <tr><td class="text-center font-mono text-amber-500">32</td><td class="font-medium">总复习 + 模拟冲刺</td><td class="text-gray-500 text-xs">高频考点串讲；限时模拟训练 + 错题分析</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- 为什么选择我们 -->
   <section id="about" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
@@ -662,5 +962,26 @@
     header.classList.toggle('open', !isOpen);
     body.classList.toggle('open', !isOpen);
   }
+
+  // 轮播逻辑
+  let carouselIndex = 0;
+  const carouselTotal = 6;
+  function carouselGo(i) {
+    carouselIndex = Math.max(0, Math.min(i, carouselTotal - 1));
+    document.getElementById('carousel-track').style.transform = `translateX(-${carouselIndex * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, idx) => {
+      d.className = 'carousel-dot w-3 h-3 rounded-full transition-all ' + (idx === carouselIndex ? 'bg-pink-500 w-8' : 'bg-gray-300');
+    });
+  }
+  function carouselNext() { carouselGo((carouselIndex + 1) % carouselTotal); }
+  function carouselPrev() { carouselGo((carouselIndex - 1 + carouselTotal) % carouselTotal); }
+
+  // 触摸滑动支持
+  let touchStartX = 0;
+  document.getElementById('carousel-wrapper').addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+  document.getElementById('carousel-wrapper').addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? carouselNext() : carouselPrev(); }
+  });
 </script>
 </html>
