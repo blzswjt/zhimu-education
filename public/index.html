@@ -1343,12 +1343,14 @@
     position: fixed; bottom: 24px; right: 24px; z-index: 9999;
     width: 60px; height: 60px; border-radius: 50%;
     background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white; border: none; cursor: pointer;
+    color: white; border: none; cursor: grab;
     box-shadow: 0 4px 20px rgba(102,126,234,0.4);
     display: flex; align-items: center; justify-content: center;
-    transition: all 0.3s ease; font-size: 28px;
+    transition: box-shadow 0.3s ease; font-size: 28px;
+    touch-action: none;
   }
-  #chat-toggle:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(102,126,234,0.6); }
+  #chat-toggle:hover { box-shadow: 0 6px 28px rgba(102,126,234,0.6); }
+  #chat-toggle.dragging { cursor: grabbing; transition: none; }
   #chat-toggle.active { border-radius: 16px; }
 
   #chat-panel {
@@ -1471,10 +1473,70 @@ let chatOpen = false;
 let chatHistory = [];
 let isStreaming = false;
 
+// --- 拖动逻辑 ---
+(function() {
+  const btn = document.getElementById('chat-toggle');
+  const panel = document.getElementById('chat-panel');
+  let isDragging = false, moved = false;
+  let startX, startY, btnLeft, btnTop;
+
+  function onStart(e) {
+    e.preventDefault();
+    const touch = e.touches ? e.touches[0] : e;
+    isDragging = true; moved = false;
+    startX = touch.clientX; startY = touch.clientY;
+    const rect = btn.getBoundingClientRect();
+    btnLeft = rect.left; btnTop = rect.top;
+    btn.classList.add('dragging');
+  }
+  function onMove(e) {
+    if (!isDragging) return;
+    const touch = e.touches ? e.touches[0] : e;
+    const dx = touch.clientX - startX, dy = touch.clientY - startY;
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
+    let nx = btnLeft + dx, ny = btnTop + dy;
+    // 限制在屏幕内
+    nx = Math.max(0, Math.min(window.innerWidth - 60, nx));
+    ny = Math.max(0, Math.min(window.innerHeight - 60, ny));
+    btn.style.left = nx + 'px'; btn.style.top = ny + 'px';
+    btn.style.right = 'auto'; btn.style.bottom = 'auto';
+    // 面板跟随按钮位置
+    updatePanelPos();
+  }
+  function onEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    btn.classList.remove('dragging');
+    if (!moved) { window.toggleChat(); }
+  }
+  btn.addEventListener('mousedown', onStart);
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup', onEnd);
+  btn.addEventListener('touchstart', onStart, { passive: false });
+  document.addEventListener('touchmove', onMove, { passive: false });
+  document.addEventListener('touchend', onEnd);
+
+  function updatePanelPos() {
+    const rect = btn.getBoundingClientRect();
+    const pw = 380, ph = 540;
+    // 面板在按钮上方
+    let px = rect.left + 30 - pw / 2;
+    let py = rect.top - ph - 12;
+    // 水平限制
+    px = Math.max(8, Math.min(window.innerWidth - pw - 8, px));
+    // 如果上方空间不足，放到下方
+    if (py < 8) { py = rect.bottom + 12; }
+    panel.style.left = px + 'px'; panel.style.top = py + 'px';
+    panel.style.right = 'auto'; panel.style.bottom = 'auto';
+  }
+  window._updatePanelPos = updatePanelPos;
+})();
+
 function toggleChat() {
   chatOpen = !chatOpen;
   document.getElementById('chat-panel').classList.toggle('open', chatOpen);
   document.getElementById('chat-toggle').classList.toggle('active', chatOpen);
+  if (chatOpen && window._updatePanelPos) window._updatePanelPos();
 }
 
 function sendQuick(btn) {
