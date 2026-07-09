@@ -52,8 +52,12 @@ KEYWORD_MAP = {
     '教师': ['teachers.txt'],
     '师资': ['teachers.txt'],
     '孙宇航': ['teachers.txt'],
-    '佘孟谦': ['teachers.txt', 'teachers.txt'],
+    '佘孟谦': ['teachers.txt'],
     '王老师': ['teachers.txt'],
+    '林忠晶': ['teachers.txt'],
+    '林老师': ['teachers.txt'],
+    'Lydia': ['teachers.txt'],
+    '吴老师': ['teachers.txt'],
     # 语文课件
     '作文': ['chinese_lectures.txt', 'courses.txt'],
     '文言文': ['chinese_lectures.txt', 'courses.txt'],
