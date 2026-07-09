@@ -1079,7 +1079,7 @@
 
   <!-- 师资团队 -->
   <section id="teachers" class="py-24 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <div class="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-4">
           师资力量
@@ -1089,288 +1089,210 @@
       </div>
 
       <!-- 学科筛选 -->
-      <div class="flex justify-center flex-wrap gap-3 mb-10">
+      <div class="flex justify-center flex-wrap gap-3 mb-12">
         <button onclick="filterTeachers('all')" id="teacher-tab-all" class="px-6 py-2.5 rounded-full text-sm font-medium transition bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg">全部</button>
         <button onclick="filterTeachers('math')" id="teacher-tab-math" class="px-6 py-2.5 rounded-full text-sm font-medium transition bg-white text-gray-600 border border-gray-200 hover:border-pink-300">数学</button>
         <button onclick="filterTeachers('chinese')" id="teacher-tab-chinese" class="px-6 py-2.5 rounded-full text-sm font-medium transition bg-white text-gray-600 border border-gray-200 hover:border-green-300">语文</button>
         <button onclick="filterTeachers('english')" id="teacher-tab-english" class="px-6 py-2.5 rounded-full text-sm font-medium transition bg-white text-gray-600 border border-gray-200 hover:border-blue-300">英语</button>
       </div>
 
-      <div id="teacher-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <!-- 教师卡片网格 -->
+      <div id="teacher-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- 数学老师：孙老师 -->
-        <div data-subject="math" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
-          <div class="bg-gradient-to-r from-pink-500 to-rose-500 p-6 text-white">
-            <div class="flex items-center gap-5">
-              <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">孙</div>
+        <div data-subject="math" class="teacher-card bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+          <div class="bg-gradient-to-r from-pink-500 to-rose-500 p-5 text-white">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-2xl font-black shrink-0">孙</div>
               <div>
-                <h3 class="text-2xl font-bold">孙老师</h3>
-                <p class="text-white/80 mt-1">数学辅导教师</p>
-                <div class="flex flex-wrap gap-2 mt-2">
+                <h3 class="text-xl font-bold">孙老师</h3>
+                <p class="text-white/80 text-sm mt-1">数学辅导教师</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">杭州电子科技大学</span>
-                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">本科在读</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-6 space-y-5">
+          <div class="p-5 space-y-4">
             <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                核心优势
-              </h4>
-              <ul class="text-gray-500 text-sm space-y-1.5 ml-6">
-                <li>浙江高考数学 <span class="font-bold text-pink-600">133分</span>，物理83分，实战经验丰富</li>
-                <li>中考数学 <span class="font-bold text-pink-600">120+</span>，初中科学 <span class="font-bold text-pink-600">150+</span>（满分180）</li>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">核心优势</h4>
+              <ul class="text-gray-600 text-xs space-y-1.5 ml-4 list-disc">
+                <li>浙江高考数学 <span class="font-bold text-pink-600">133分</span></li>
+                <li>中考数学 <span class="font-bold text-pink-600">120+</span>，初中科学 <span class="font-bold text-pink-600">150+</span></li>
                 <li>集成电路创新创业大赛省三等奖</li>
-                <li>杭州亚运会、亚残运会杰出志愿者</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-indigo-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 002 7v6a1 1 0 00.504.868l7 4a1 1 0 00.992 0l7-4A1 1 0 0018 13V7a1 1 0 00-.504-.868l-7-4zM10 14.396L4 11.03V7.634l6 3.43v3.333zm1 0v-3.33l6-3.43v3.397l-6 3.364z" clip-rule="evenodd"/></svg>
-                教学方向
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">同步课内辅导</span>
-                <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">核心难点突破</span>
-                <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">高考冲刺备考</span>
-                <span class="px-3 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">数学思维培养</span>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">教学方向</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">同步课内辅导</span>
+                <span class="px-2.5 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">核心难点突破</span>
+                <span class="px-2.5 py-1 bg-pink-50 text-pink-600 rounded-full text-xs font-medium">高考冲刺备考</span>
               </div>
             </div>
-            <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                教学成果
-              </h4>
-              <div class="space-y-2">
-                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-3">
-                  <span class="shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xs font-bold">+28</span>
-                  <div class="text-sm text-gray-600">辅导余姚中学高一新生，数学从 <span class="font-bold text-gray-900">85分 → 113分</span>，班排名 41名 → 29名</div>
-                </div>
-                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-3">
-                  <span class="shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xs font-bold">A+</span>
-                  <div class="text-sm text-gray-600">多名基础薄弱小学生从及格线提升至优秀水平，摆脱数理学习畏难情绪</div>
-                </div>
+            <div class="bg-green-50 rounded-lg p-3">
+              <div class="flex items-start gap-2">
+                <span class="shrink-0 w-6 h-6 bg-green-100 rounded flex items-center justify-center text-green-600 text-xs font-bold">+28</span>
+                <div class="text-xs text-gray-600">余姚中学高一新生，数学从 <span class="font-bold text-gray-900">85→113分</span></div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- 语文老师：王老师 -->
-        <div data-subject="chinese" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
-          <div class="bg-gradient-to-r from-emerald-500 to-teal-500 p-6 text-white">
-            <div class="flex items-center gap-5">
-              <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">王</div>
+        <div data-subject="chinese" class="teacher-card bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+          <div class="bg-gradient-to-r from-emerald-500 to-teal-500 p-5 text-white">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-2xl font-black shrink-0">王</div>
               <div>
-                <h3 class="text-2xl font-bold">王老师</h3>
-                <p class="text-white/80 mt-1">语文辅导教师</p>
-                <div class="flex flex-wrap gap-2 mt-2">
+                <h3 class="text-xl font-bold">王老师</h3>
+                <p class="text-white/80 text-sm mt-1">语文辅导教师</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">北京师范大学 · 硕士</span>
-                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">国家奖学金</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-6 space-y-5">
+          <div class="p-5 space-y-4">
             <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                核心资质
-              </h4>
-              <ul class="text-gray-500 text-sm space-y-1.5 ml-6">
-                <li>北京师范大学硕士，<span class="font-bold text-emerald-600">汉语言文学师范专业</span></li>
-                <li>曾获 <span class="font-bold text-emerald-600">国家奖学金</span>，顶尖学术能力</li>
-                <li>持有 <span class="font-bold text-emerald-600">高中语文教师资格证</span></li>
-                <li>深耕语文教学 <span class="font-bold text-emerald-600">近十年</span>，自研阅读写作提升课程</li>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">核心资质</h4>
+              <ul class="text-gray-600 text-xs space-y-1.5 ml-4 list-disc">
+                <li>汉语言文学师范专业，国家奖学金</li>
+                <li>高中语文教师资格证</li>
+                <li>深耕语文教学近十年</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-indigo-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 002 7v6a1 1 0 00.504.868l7 4a1 1 0 00.992 0l7-4A1 1 0 0018 13V7a1 1 0 00-.504-.868l-7-4zM10 14.396L4 11.03V7.634l6 3.43v3.333zm1 0v-3.33l6-3.43v3.397l-6 3.364z" clip-rule="evenodd"/></svg>
-                辅导范围
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">初中语文</span>
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">高中语文</span>
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">古诗文鉴赏</span>
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">现代文阅读</span>
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">作文提分</span>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">辅导范围</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">初中语文</span>
+                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">高中语文</span>
+                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">作文提分</span>
               </div>
             </div>
-            <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                教学成果
-              </h4>
-              <div class="space-y-2">
-                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-3">
-                  <span class="shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xs font-bold">+23</span>
-                  <div class="text-sm text-gray-600">七年级学生 95/150 → <span class="font-bold text-gray-900">118.5/150</span>，仅用10+课时</div>
-                </div>
-                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-3">
-                  <span class="shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xs font-bold">+24</span>
-                  <div class="text-sm text-gray-600">七年级学生 95/120 → <span class="font-bold text-gray-900">114/120</span>，现代文阅读仅扣1分</div>
-                </div>
-                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-3">
-                  <span class="shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xs font-bold">+17</span>
-                  <div class="text-sm text-gray-600">八年级学生 83/120 → <span class="font-bold text-gray-900">100+/120</span>，基础知识不扣分</div>
-                </div>
-                <div class="flex items-start gap-3 bg-green-50 rounded-xl p-3">
-                  <span class="shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-xs font-bold">+17</span>
-                  <div class="text-sm text-gray-600">高一学生 93/120 → <span class="font-bold text-gray-900">110/150</span>，稳定在高分段</div>
-                </div>
+            <div class="bg-green-50 rounded-lg p-3">
+              <div class="flex items-start gap-2">
+                <span class="shrink-0 w-6 h-6 bg-green-100 rounded flex items-center justify-center text-green-600 text-xs font-bold">+23</span>
+                <div class="text-xs text-gray-600">七年级学生 95/150 → <span class="font-bold text-gray-900">118.5/150</span></div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- 数学老师：佘老师 -->
-        <div data-subject="math" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover lg:col-span-2 lg:max-w-lg lg:mx-auto w-full">
-          <div class="bg-gradient-to-r from-orange-500 to-amber-500 p-6 text-white">
-            <div class="flex items-center gap-5">
-              <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">佘</div>
+        <div data-subject="math" class="teacher-card bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+          <div class="bg-gradient-to-r from-orange-500 to-amber-500 p-5 text-white">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-2xl font-black shrink-0">佘</div>
               <div>
-                <h3 class="text-2xl font-bold">佘老师</h3>
-                <p class="text-white/80 mt-1">高中数学辅导教师</p>
-                <div class="flex flex-wrap gap-2 mt-2">
+                <h3 class="text-xl font-bold">佘老师</h3>
+                <p class="text-white/80 text-sm mt-1">高中数学辅导教师</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">南京大学 · 理科</span>
-                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">省排前800</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="p-6 space-y-5">
+          <div class="p-5 space-y-4">
             <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                核心优势
-              </h4>
-              <ul class="text-gray-500 text-sm space-y-1.5 ml-6">
-                <li>中考数学 <span class="font-bold text-orange-600">满分</span>，高考数学 <span class="font-bold text-orange-600">136分</span></li>
-                <li>高考省排名前800名，学霸实战经验</li>
-                <li>南京大学理科背景 + 教育机构任教经历</li>
-                <li>擅长 <span class="font-bold text-orange-600">错题溯源教学</span>，个性化提分</li>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">核心优势</h4>
+              <ul class="text-gray-600 text-xs space-y-1.5 ml-4 list-disc">
+                <li>中考数学满分，高考数学 <span class="font-bold text-orange-600">136分</span></li>
+                <li>高考省排名前800名</li>
+                <li>擅长错题溯源教学</li>
               </ul>
             </div>
             <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-indigo-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 002 7v6a1 1 0 00.504.868l7 4a1 1 0 00.992 0l7-4A1 1 0 0018 13V7a1 1 0 00-.504-.868l-7-4zM10 14.396L4 11.03V7.634l6 3.43v3.333zm1 0v-3.33l6-3.43v3.397l-6 3.364z" clip-rule="evenodd"/></svg>
-                教学方向
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">同步课内辅导</span>
-                <span class="px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">核心难点突破</span>
-                <span class="px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">高考冲刺备考</span>
-                <span class="px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">错题溯源复盘</span>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">教学方向</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">同步课内辅导</span>
+                <span class="px-2.5 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">高考冲刺备考</span>
+                <span class="px-2.5 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">错题复盘</span>
               </div>
             </div>
-            <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                教学理念
-              </h4>
-              <div class="bg-orange-50 rounded-xl p-4 text-sm text-gray-600 italic">
-                "以高分经验赋能教学，以个性化方法助力提分，让每个学生都能学好数学、冲刺高分。"
+            <div class="bg-orange-50 rounded-lg p-3 text-xs text-gray-600 italic">
+              "以高分经验赋能教学，让每个学生都能学好数学、冲刺高分。"
+            </div>
+          </div>
+        </div>
+
+        <!-- 数学老师：林老师 -->
+        <div data-subject="math" class="teacher-card bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+          <div class="bg-gradient-to-r from-emerald-500 to-teal-500 p-5 text-white">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-2xl font-black shrink-0">林</div>
+              <div>
+                <h3 class="text-xl font-bold">林老师</h3>
+                <p class="text-white/80 text-sm mt-1">初高中数学竞赛教师</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">复旦大学 · 应用数学</span>
+                </div>
               </div>
+            </div>
+          </div>
+          <div class="p-5 space-y-4">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">核心优势</h4>
+              <ul class="text-gray-600 text-xs space-y-1.5 ml-4 list-disc">
+                <li>中考数学满分，高考数学 <span class="font-bold text-emerald-600">135分</span></li>
+                <li>全国高中数学竞赛省三等奖</li>
+                <li>美赛M奖，GPA 3.66（专业前5%）</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">教学方向</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">初中数学竞赛</span>
+                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">高中数学竞赛</span>
+                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">课内提优</span>
+              </div>
+            </div>
+            <div class="bg-emerald-50 rounded-lg p-3 text-xs text-gray-600">
+              指导多名初中生竞赛获奖并获保送资格
+            </div>
+          </div>
+        </div>
+
+        <!-- 英语老师：吴老师 -->
+        <div data-subject="english" class="teacher-card bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+          <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-5 text-white">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-2xl font-black shrink-0">吴</div>
+              <div>
+                <h3 class="text-xl font-bold">吴老师</h3>
+                <p class="text-white/80 text-sm mt-1">初高中英语教学名师</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">高中英语教师资格证</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 space-y-4">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">核心优势</h4>
+              <ul class="text-gray-600 text-xs space-y-1.5 ml-4 list-disc">
+                <li>在职重点中学骨干教师</li>
+                <li>所带学员中考英语均分 <span class="font-bold text-blue-600">100+</span>（满分120）</li>
+                <li>擅长系统拆解语法逻辑</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-2 text-sm">教学方向</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">中考英语冲刺</span>
+                <span class="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">语法体系构建</span>
+                <span class="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">阅读写作提升</span>
+              </div>
+            </div>
+            <div class="bg-blue-50 rounded-lg p-3 text-xs text-gray-600 italic">
+              "不只教英语，更教方法；不只提分数，更提信心。"
             </div>
           </div>
         </div>
 
       </div>
 
-        <!-- 数学老师：林老师 -->
-        <div data-subject="math" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
-          <div class="bg-gradient-to-r from-emerald-500 to-teal-500 p-6 text-white">
-            <div class="flex items-center gap-5">
-              <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">林</div>
-              <div>
-                <h3 class="text-2xl font-bold">林老师</h3>
-                <p class="text-white/80 mt-1">初高中数学竞赛教师</p>
-                <div class="flex flex-wrap gap-2 mt-2">
-                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">复旦大学 · 应用数学</span>
-                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">硕博连读</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 space-y-5">
-            <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                核心优势
-              </h4>
-              <ul class="text-gray-500 text-sm space-y-1.5 ml-6">
-                <li>中考数学满分，高考数学 <span class="font-bold text-emerald-600">135分</span></li>
-                <li>全国高中数学竞赛省三等奖、大学数学竞赛一等奖</li>
-                <li>美赛M奖，GPA 3.66（专业前5%）</li>
-                <li>教育机构 <span class="font-bold text-emerald-600">高中数学竞赛讲师</span></li>
-                <li>指导多名初中生竞赛获奖并获保送资格</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-indigo-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 002 7v6a1 1 0 00.504.868l7 4a1 1 0 00.992 0l7-4A1 1 0 0018 13V7a1 1 0 00-.504-.868l-7-4zM10 14.396L4 11.03V7.634l6 3.43v3.333zm1 0v-3.33l6-3.43v3.397l-6 3.364z" clip-rule="evenodd"/></svg>
-                教学方向
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">初中数学竞赛</span>
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">高中数学竞赛</span>
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">课内提优拔高</span>
-                <span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium">错题溯源辅导</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 英语老师：吴老师 -->
-        <div data-subject="english" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
-          <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-6 text-white">
-            <div class="flex items-center gap-5">
-              <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">吴</div>
-              <div>
-                <h3 class="text-2xl font-bold">吴老师</h3>
-                <p class="text-white/80 mt-1">初高中英语教学名师</p>
-                <div class="flex flex-wrap gap-2 mt-2">
-                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">高中英语教师资格证</span>
-                  <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">国家奖学金</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 space-y-5">
-            <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                核心优势
-              </h4>
-              <ul class="text-gray-500 text-sm space-y-1.5 ml-6">
-                <li>在职重点中学 <span class="font-bold text-blue-600">骨干教师</span></li>
-                <li>所带学员中考英语均分 <span class="font-bold text-blue-600">100+</span>（满分120）</li>
-                <li>高分率、进步率位居前列</li>
-                <li>擅长系统拆解语法逻辑，告别死记硬背</li>
-                <li>课堂生动有趣，情境教学 + 互动问答</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <svg class="w-4 h-4 text-indigo-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 002 7v6a1 1 0 00.504.868l7 4a1 1 0 00.992 0l7-4A1 1 0 0018 13V7a1 1 0 00-.504-.868l-7-4zM10 14.396L4 11.03V7.634l6 3.43v3.333zm1 0v-3.33l6-3.43v3.397l-6 3.364z" clip-rule="evenodd"/></svg>
-                教学方向
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">中考英语冲刺</span>
-                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">语法体系构建</span>
-                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">阅读写作提升</span>
-                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">高考英语备考</span>
-              </div>
-            </div>
-            <div class="bg-blue-50 rounded-xl p-4 text-sm text-gray-600 italic">
-              "不只教英语，更教方法；不只提分数，更提信心。让英语成为孩子的优势学科。"
-            </div>
-          </div>
-        </div>
-
-      <div class="text-center mt-10">
+      <div class="text-center mt-12">
         <p class="text-gray-400 text-sm">更多优秀教师持续加入中…</p>
       </div>
     </div>
