@@ -1088,15 +1088,23 @@
         <p class="text-lg text-gray-500 max-w-2xl mx-auto">每一位老师都经过严格筛选，专业过硬，用心教学</p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <!-- 学科筛选 -->
+      <div class="flex justify-center flex-wrap gap-3 mb-10">
+        <button onclick="filterTeachers('all')" id="teacher-tab-all" class="px-6 py-2.5 rounded-full text-sm font-medium transition bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg">全部</button>
+        <button onclick="filterTeachers('math')" id="teacher-tab-math" class="px-6 py-2.5 rounded-full text-sm font-medium transition bg-white text-gray-600 border border-gray-200 hover:border-pink-300">数学</button>
+        <button onclick="filterTeachers('chinese')" id="teacher-tab-chinese" class="px-6 py-2.5 rounded-full text-sm font-medium transition bg-white text-gray-600 border border-gray-200 hover:border-green-300">语文</button>
+        <button onclick="filterTeachers('english')" id="teacher-tab-english" class="px-6 py-2.5 rounded-full text-sm font-medium transition bg-white text-gray-600 border border-gray-200 hover:border-blue-300">英语</button>
+      </div>
 
-        <!-- 数学老师：孙宇航 -->
-        <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
+      <div id="teacher-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+        <!-- 数学老师：孙老师 -->
+        <div data-subject="math" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
           <div class="bg-gradient-to-r from-pink-500 to-rose-500 p-6 text-white">
             <div class="flex items-center gap-5">
               <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">孙</div>
               <div>
-                <h3 class="text-2xl font-bold">孙宇航</h3>
+                <h3 class="text-2xl font-bold">孙老师</h3>
                 <p class="text-white/80 mt-1">数学辅导教师</p>
                 <div class="flex flex-wrap gap-2 mt-2">
                   <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">杭州电子科技大学</span>
@@ -1150,7 +1158,7 @@
         </div>
 
         <!-- 语文老师：王老师 -->
-        <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
+        <div data-subject="chinese" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
           <div class="bg-gradient-to-r from-emerald-500 to-teal-500 p-6 text-white">
             <div class="flex items-center gap-5">
               <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">王</div>
@@ -1219,13 +1227,13 @@
 
       </div>
 
-        <!-- 数学老师：佘孟谦 -->
-        <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover lg:col-span-2 lg:max-w-lg lg:mx-auto w-full">
+        <!-- 数学老师：佘老师 -->
+        <div data-subject="math" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover lg:col-span-2 lg:max-w-lg lg:mx-auto w-full">
           <div class="bg-gradient-to-r from-orange-500 to-amber-500 p-6 text-white">
             <div class="flex items-center gap-5">
               <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">佘</div>
               <div>
-                <h3 class="text-2xl font-bold">佘孟谦</h3>
+                <h3 class="text-2xl font-bold">佘老师</h3>
                 <p class="text-white/80 mt-1">高中数学辅导教师</p>
                 <div class="flex flex-wrap gap-2 mt-2">
                   <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">南京大学 · 理科</span>
@@ -1273,13 +1281,13 @@
 
       </div>
 
-        <!-- 数学老师：林忠晶 -->
-        <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
+        <!-- 数学老师：林老师 -->
+        <div data-subject="math" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
           <div class="bg-gradient-to-r from-emerald-500 to-teal-500 p-6 text-white">
             <div class="flex items-center gap-5">
               <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">林</div>
               <div>
-                <h3 class="text-2xl font-bold">林忠晶</h3>
+                <h3 class="text-2xl font-bold">林老师</h3>
                 <p class="text-white/80 mt-1">初高中数学竞赛教师</p>
                 <div class="flex flex-wrap gap-2 mt-2">
                   <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">复旦大学 · 应用数学</span>
@@ -1317,13 +1325,13 @@
           </div>
         </div>
 
-        <!-- 英语老师：Lydia -->
-        <div class="bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
+        <!-- 英语老师：吴老师 -->
+        <div data-subject="english" class="teacher-card bg-white rounded-3xl shadow-lg overflow-hidden card-hover">
           <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-6 text-white">
             <div class="flex items-center gap-5">
               <div class="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-3xl font-black shrink-0">吴</div>
               <div>
-                <h3 class="text-2xl font-bold">Lydia老师</h3>
+                <h3 class="text-2xl font-bold">吴老师</h3>
                 <p class="text-white/80 mt-1">初高中英语教学名师</p>
                 <div class="flex flex-wrap gap-2 mt-2">
                   <span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">高中英语教师资格证</span>
@@ -1452,7 +1460,36 @@
     body.classList.toggle('open', !isOpen);
   }
 
-  // 笔记展示 Tab 切换
+  // 教师学科筛选
+    function filterTeachers(subject) {
+      const cards = document.querySelectorAll('.teacher-card');
+      cards.forEach(card => {
+        if (subject === 'all' || card.dataset.subject === subject) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      // 更新 tab 样式
+      const tabMap = { all: 'teacher-tab-all', math: 'teacher-tab-math', chinese: 'teacher-tab-chinese', english: 'teacher-tab-english' };
+      const colorMap = {
+        all: 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg',
+        math: 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg',
+        chinese: 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg',
+        english: 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg'
+      };
+      const inactiveClass = 'bg-white text-gray-600 border border-gray-200';
+      Object.entries(tabMap).forEach(([key, id]) => {
+        const btn = document.getElementById(id);
+        if (key === subject) {
+          btn.className = 'px-6 py-2.5 rounded-full text-sm font-medium transition ' + colorMap[key];
+        } else {
+          btn.className = 'px-6 py-2.5 rounded-full text-sm font-medium transition ' + inactiveClass;
+        }
+      });
+    }
+  
+    // 笔记展示 Tab 切换
   function switchNotesTab(tab) {
     document.getElementById('notes-math').classList.toggle('hidden', tab !== 'math');
     document.getElementById('notes-cn').classList.toggle('hidden', tab !== 'cn');
